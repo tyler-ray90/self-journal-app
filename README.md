@@ -8,7 +8,7 @@
 
 # Technologies Used
 
-## MERN Stack Application
+## MERN Stack Application:
 * React
 * Express
 * MongoDB
