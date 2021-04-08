@@ -30,6 +30,7 @@ return (
   <div className="App">
     <header className="App-header">
       Self-Journal
+      testings2111
       Testing
     </header>
   </div>
