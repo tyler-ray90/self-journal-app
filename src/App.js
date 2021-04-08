@@ -1,25 +1,41 @@
-import logo from './logo.svg';
+import {useState, useEffect } from "react";
+import {fetchJournalData} from './services/journalService';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App () {
+
+const [ journals, setJournals ] = useState([]);
+
+const [ journalState, setJournalState ] = useState([]);
+
+
+async function getAppData() {
+  if(!journalState.user) return;
+  try {
+    const BASE_URL = 'http://localhost:3001/api/journal';
+    const journal = await fetch(BASE_URL).then(res => res.json());
+    setJournals((prevState) => ({
+      ...prevState,
+      journals,
+    }));
+  } catch (error) {
+    console.log(error)
+  }
 }
+useEffect(() => {
+  getAppData();
+}, []); 
+
+return (
+  <div className="App">
+    <header className="App-header">
+      Self-Journal
+    </header>
+  </div>
+);
+}
+
+
+
 
 export default App;
