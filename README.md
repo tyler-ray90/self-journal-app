@@ -6,9 +6,9 @@
   Simply writing your thoughts down should only take about 5 minutes of your time each day. Your mental health will thank you!
 
 
-## Technologies Used
+# Technologies Used
 
-### MERN Stack Application
+## MERN Stack Application
 * React
 * Express
 * MongoDB
@@ -19,8 +19,8 @@
 
 
 
-## Getting Started 
+# Getting Started 
 
-## Unsolved Problems 
+# Unsolved Problems 
 
 # Furture Enhancements 
