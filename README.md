@@ -8,6 +8,15 @@
 
 ## Technologies Used
 
+### MERN Stack Application
+* React
+* Express
+* MongoDB
+* Mongoose
+* Node
+* CSS
+* API
+
 
 
 ## Getting Started 
