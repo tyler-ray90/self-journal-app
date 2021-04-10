@@ -1,6 +1,10 @@
 import {useState, useEffect } from "react";
 import {fetchJournalData} from './services/journalService';
 import './App.css';
+import { quoteAPI } from './services/utilities';
+
+import Quote from '../src/components/quote/quote';
+import Footer from '../src/components/footer/footer';
 
 function App () {
 
@@ -8,6 +12,7 @@ const [ journals, setJournals ] = useState([]);
 
 const [ journalState, setJournalState ] = useState([]);
 
+const [ apiState, setApiState ] = useState({});
 
 async function getAppData() {
   if(!journalState.user) return;
@@ -22,15 +27,32 @@ async function getAppData() {
     console.log(error)
   }
 }
+
+async function getQuoteData() {
+  const data = await quoteAPI();
+  setApiState(data);
+  console.log(data);
+
+}
+
 useEffect(() => {
   getAppData();
+  getQuoteData();
 }, []); 
 
 return (
+
   <div className="App">
     <header className="App-header">
-      Self-Journal
+      <h1>Self-Journal</h1>
+      <div>Welcome, User</div>
+      <div>Login</div>
     </header>
+    <main className="main">
+      <h1>Accomplish more with Self Journal</h1>
+      <Quote apiState={apiState}/>
+      <Footer />
+    </main>
   </div>
 );
 }
