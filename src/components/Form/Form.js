@@ -1,3 +1,5 @@
+import Button from 'react-bootstrap/Button';
+
 function Form(props) {
     return (
         <fieldset className="form">
@@ -14,7 +16,9 @@ function Form(props) {
             <br/>
             <label>What's on your mind?</label>
             <input type="text"/>
-            </form>
+            <br/>
+            <Button variant="primary">Add Journal</Button>
+        </form>
         </fieldset>
     );
 }

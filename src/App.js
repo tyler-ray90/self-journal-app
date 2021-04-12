@@ -3,13 +3,23 @@ import {fetchJournalData} from './services/journalService';
 import './App.css';
 import { quoteAPI } from './services/utilities';
 
+
 import Quote from '../src/components/quote/quote';
 import Footer from '../src/components/footer/footer';
 import Form from '../src/components/Form/Form';
 
-function App () {
+export default function App() {
 
-const [ journals, setJournals ] = useState([]);
+const [ journals, setJournals ] = useState({
+  user: null,
+  journals: [{ feeling: "", goal: "", grateful: "", journalEntry: "",}],
+  newJournal: {
+    feeling: "",
+    goal: "",
+    grateful: "",
+    journalEntry: "",
+  },
+});
 
 const [ journalState, setJournalState ] = useState([]);
 
@@ -36,6 +46,41 @@ async function getQuoteData() {
 
 }
 
+async function addJournal(e) {
+  e.preventDefault();
+  
+  const BASE_URL = 'http://localhost:3001/api/journal';
+  
+  const journal = await fetch(BASE_URL, {
+    method: 'POST',
+    headers: {
+      'Content-type': 'Application/json'
+    },
+    body: JSON.stringify(journals.newJournal)
+  }).then(res => res.json());
+
+  setJournals((prevState) => ({
+    ...prevState,
+    journals: [...prevState.journals, journal.newJournal],
+    newJournal: {
+    feeling: "",
+    goal: "",
+    grateful: "",
+    journalEntry: "",
+    },
+  }));
+}
+
+function handleChange(e) {
+  setJournals((prevState) => ({
+    ...prevState,
+    newJournal: {
+      ...prevState.newJournal,
+      [e.target.name]: e.target.value
+    },
+  }));
+}
+
 useEffect(() => {
   getAppData();
   getQuoteData();
@@ -52,7 +97,34 @@ return (
     <main className="main">
       <h1>Accomplish more with Self Journal</h1>
       <Quote apiState={apiState}/>
-      <Form />
+      <section>
+        {journals.journals.map((j) => (
+          <article key={j.journal}>
+            <div>{j.feeling}</div>
+             <div>{j.goal}</div>
+        </article>
+        ))}
+        <form onSubmit={addJournal}>
+           <label>
+             <span>Feelings</span>
+             <input 
+               name="feeling"
+               value={journals.newJournal.feeling}
+               onChange={handleChange}
+             />
+           </label>
+           <label>
+            <span>Goals</span>
+           <input
+            name="goal"
+            value={journals.newJournal.goal}
+            onChange={handleChange}
+           />
+           </label>
+           <button>Add Skill</button>
+          </form>
+      </section>
+      {/* <Form /> */}
       <Footer />
     </main>
   </div>
@@ -62,4 +134,4 @@ return (
 
 
 
-export default App;
+
