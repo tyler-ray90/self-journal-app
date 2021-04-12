@@ -4,7 +4,7 @@ function Quote(props) {
     return (
         <>
         <div className="quote">"{props.apiState.content}"</div>
-        {/* <div>-{props.apiState.originator.name}</div> */}
+        <div className="name">-{props.apiState.originator?.name}</div>
 
         <SignUp />
         </>

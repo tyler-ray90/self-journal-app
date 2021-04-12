@@ -25,9 +25,18 @@
   margin: 40px;
 }
 
+.name {
+  font-size: 25px;
+  font-weight: bold;
+}
+
 .signup {
   font-size: 25px;
   margin: 70px;
+}
+
+.form {
+  font-size: 25px;
 }
 
 .footer {

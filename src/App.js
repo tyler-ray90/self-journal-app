@@ -5,6 +5,7 @@ import { quoteAPI } from './services/utilities';
 
 import Quote from '../src/components/quote/quote';
 import Footer from '../src/components/footer/footer';
+import Form from '../src/components/Form/Form';
 
 function App () {
 
@@ -51,6 +52,7 @@ return (
     <main className="main">
       <h1>Accomplish more with Self Journal</h1>
       <Quote apiState={apiState}/>
+      <Form />
       <Footer />
     </main>
   </div>
