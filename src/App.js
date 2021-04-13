@@ -21,22 +21,28 @@ const [ journals, setJournals ] = useState({
   },
 });
 
-const [ journalState, setJournalState ] = useState([]);
+// const [ journalState, setJournalState ] = useState({});
 
 const [ apiState, setApiState ] = useState({});
 
+// async function getAppData() {
+//   {
+//     const BASE_URL = 'http://localhost:3001/api/journal';
+//     // const journal = await fetch(BASE_URL).then(res => res.json());
+//     setJournalState((prevState) => ({
+//       ...prevState,
+//       journals,
+//     }));
+//   }
+// }
+
 async function getAppData() {
-  if(!journalState.user) return;
-  try {
-    const BASE_URL = 'http://localhost:3001/api/journal';
-    const journal = await fetch(BASE_URL).then(res => res.json());
+  const BASE_URL = 'http://localhost:3001/api/journal';
+  const journals = await fetch(BASE_URL).then(res => res.json());
     setJournals((prevState) => ({
       ...prevState,
       journals,
     }));
-  } catch (error) {
-    console.log(error)
-  }
 }
 
 async function getQuoteData() {
@@ -60,8 +66,7 @@ async function addJournal(e) {
   }).then(res => res.json());
 
   setJournals((prevState) => ({
-    ...prevState,
-    journals: [...prevState.journals, journal.newJournal],
+    journals: [...prevState.journals, journal],
     newJournal: {
     feeling: "",
     goal: "",
@@ -98,11 +103,13 @@ return (
       <h1>Accomplish more with Self Journal</h1>
       <Quote apiState={apiState}/>
       <section>
+        
         {journals.journals.map((j) => (
           <article key={j.journal}>
             <div>{j.feeling}</div>
              <div>{j.goal}</div>
         </article>
+        
         ))}
         <form onSubmit={addJournal}>
            <label>
@@ -113,16 +120,36 @@ return (
                onChange={handleChange}
              />
            </label>
+           <br/>
            <label>
-            <span>Goals</span>
+            <span>Intentions/Achievments</span>
            <input
             name="goal"
             value={journals.newJournal.goal}
             onChange={handleChange}
            />
            </label>
-           <button>Add Skill</button>
+           <br/>
+           <label>
+            <span>What are you grateful for?</span>
+           <input
+            name="grateful"
+            value={journals.newJournal.grateful}
+            onChange={handleChange}
+           />
+           </label>
+           <br/>
+           <label>
+            <span>What's on your mind?</span>
+           <input
+            name="journalEntry"
+            value={journals.newJournal.journalEntry}
+            onChange={handleChange}
+           />
+           </label>
+           <button>Add Journal</button>
           </form>
+
       </section>
       {/* <Form /> */}
       <Footer />
