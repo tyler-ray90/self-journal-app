@@ -4,7 +4,7 @@ import '../../App.css';
 
 const HomePage = (props) => {
     return (
-        <div className="App">
+        <div className="App-home">
     <main className="main">
       <h1>Accomplish more with Self Journal</h1>
       <Quote apiState={props.apiState}/>

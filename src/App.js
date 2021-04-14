@@ -83,7 +83,7 @@ useEffect(() => {
 return (
   <div className="App">
     <header className="App-header">
-      <Header />
+    <Header />
     </header>
     <Switch>
     <Route exact path = "/" render={(props) => 

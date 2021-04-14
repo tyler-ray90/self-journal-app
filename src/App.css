@@ -1,9 +1,9 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
-}
+} */
 
-.App {
+.App-home {
   text-align: center;
   background: url('../src/img/AdobeStock_233755194.jpeg');
   background-position: center center;
@@ -41,53 +41,39 @@
 }
 
 .form-container {
+  text-align: center;
   font-size: 30px;
-  min-height: fit-content;
-  min-width: fit-content;
   background: url(./img/AdobeStock_322579336.jpeg) ;
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-/* .form {
+.form {
   font-size: 30px;
   min-height: 80vh;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-} */
+  /* min-height: fit-content;
+  min-width: fit-content; */
+}
 
 input, textarea {
   width: 75%;
-  padding: 20px;
+  padding-bottom: 30px;
   background: transparent;
   border: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 2px solid #000000;
  
 }
 
-/* span {
-  padding: 30px;
-} */
-/* textarea {
-  width: 500px;
-  height: 100px;
-  max-width: 500px;
-  max-height: 100px;
-} */
-
-.lable {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
 
 .library-container {
+  text-align: center;
   background: url('./img/AdobeStock_342147612.jpeg');
   background-position: center center;
   background-attachment: fixed;
@@ -97,13 +83,47 @@ input, textarea {
 
 }
 
+fieldset {
+  font-size: 20px;
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px 0;
+  max-width: fit-content;
+  max-height: fit-content;
+
+}
+
+button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #008CBA;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+button:hover {background-color: #008CBA;}
+
+button:active {
+  background-color: #008CBA;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .footer {
   color: black;
     font-size: 20px;
     width: 100%;
     text-align: center;
     border-top: 1px groove black;
-    /* position: absolute; */
     position: fixed;
     bottom: 0;
 

@@ -6,10 +6,13 @@ function Library(props) {
         <div className="library-container">
         {props.journals.journals.map((j) => (
           <fieldset key={j.journal}>
-             <div>{j.feeling}</div>
-             <div>{j.goal}</div>
-             <div>{j.grateful}</div>
-             <div>{j.journalEntry}</div>
+             <p>How were you feeling: {j.feeling}</p>
+             <br/>
+             <p>Achievments/Intentions: {j.goal}</p>
+             <br/>
+             <p>What were you grateful for: {j.grateful}</p>
+             <br/>
+             <p>What was on your mind: {j.journalEntry}</p>
           </fieldset>
         ))}
         </div>
