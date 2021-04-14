@@ -45,6 +45,9 @@
     width: 100%;
     text-align: center;
     border-top: 1px groove black;
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
+    bottom: 0;
+
 }
 

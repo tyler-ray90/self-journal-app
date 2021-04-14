@@ -7,6 +7,7 @@ import Footer from './components/footer/footer';
 
 import HomePage from '../src/pages/HomePage/HomePage';
 import FormPage from "./pages/FormPage/FormPage";
+import Library from './pages/Library/Library';
 // import { Form } from "react-bootstrap";
 
 export default function App() {
@@ -80,25 +81,35 @@ useEffect(() => {
 }, []); 
 
 return (
-  <div>
+  <div className="App">
     <header className="App-header">
       <Header />
     </header>
     <Switch>
     <Route exact path = "/" render={(props) => 
     <HomePage 
+      apiState={apiState}
+    />
+    } />
+    <Route exact path = "/form" render={(props) =>
+    <FormPage 
       handleChange={handleChange}
       addJournal={addJournal}
       getAppData={getQuoteData}
       journals={journals}
       setJournals={setJournals}
-      apiState={apiState}
     />
-    } />
-    <Route exact path = "/form" render={(props) =>
-    <FormPage />
     }/>
     </Switch>
+    <Route exact path = "/library" render={(props) => 
+    <Library 
+      handleChange={handleChange}
+      addJournal={addJournal}
+      getAppData={getQuoteData}
+      journals={journals}
+      setJournals={setJournals}
+    />
+    }/>
     <Footer />
   </div>
 );
