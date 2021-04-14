@@ -1,17 +1,11 @@
-import { Link } from 'react-router-dom';
 import '../../App.css';
 
 
 function FormPage(props) {
   return (
-    <>
-    <Link className="btn btn-default" to="/">Home Page</Link>
-    <br/>
-    <Link className="btn btn-default" to="/library">Library Page</Link>
-    <div>This is the Form page</div>
-    <br/>
-    <form onSubmit={props.addJournal}>
-           <label className="feelings">
+    <div className="form-container">
+    <form className="form" onSubmit={props.addJournal}>
+           <label className="label">
              <span>How do you feel?</span>
              <input 
                name="feeling"
@@ -20,7 +14,7 @@ function FormPage(props) {
              />
            </label>
            <br/>
-           <label className="goal">
+           <label className="label">
             <span>Intentions/Achievments</span>
            <input
             name="goal"
@@ -29,7 +23,7 @@ function FormPage(props) {
            />
            </label>
            <br/>
-           <label className="grateful">
+           <label className="label">
             <span>What are you grateful for?</span>
            <input
             name="grateful"
@@ -38,9 +32,9 @@ function FormPage(props) {
            />
            </label>
            <br/>
-           <label className="journal-entry">
+           <label className="label">
             <span>What's on your mind?</span>
-           <input
+           <textarea
             name="journalEntry"
             value={props.journals.newJournal.journalEntry}
             onChange={props.handleChange}
@@ -49,7 +43,7 @@ function FormPage(props) {
            <br/>
            <button>Add Journal</button>
           </form>
-    </>
+    </div>
   );
 }
 

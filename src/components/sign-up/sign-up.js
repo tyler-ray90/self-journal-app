@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 function SignUp(props) {
     return (
-        <div className="signup">Give us a try for free!(BTN)</div>
+       <Link to="/form" ><div className="signup">Give us a try for free!</div></Link>
     );
 }
 

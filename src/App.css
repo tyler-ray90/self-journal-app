@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 .App {
   text-align: center;
   background: url('../src/img/AdobeStock_233755194.jpeg');
@@ -35,8 +40,61 @@
   margin: 70px;
 }
 
-.form {
-  font-size: 25px;
+.form-container {
+  font-size: 30px;
+  min-height: fit-content;
+  min-width: fit-content;
+  background: url(./img/AdobeStock_322579336.jpeg) ;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .form {
+  font-size: 30px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+input, textarea {
+  width: 75%;
+  padding: 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+ 
+}
+
+/* span {
+  padding: 30px;
+} */
+/* textarea {
+  width: 500px;
+  height: 100px;
+  max-width: 500px;
+  max-height: 100px;
+} */
+
+.lable {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.library-container {
+  background: url('./img/AdobeStock_342147612.jpeg');
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
 }
 
 .footer {
@@ -50,4 +108,6 @@
     bottom: 0;
 
 }
+
+
 

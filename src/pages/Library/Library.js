@@ -1,22 +1,18 @@
-import { Link } from 'react-router-dom';
+
 
 function Library(props) {
     console.log(props.journals);
     return (
-        <>
-        <Link to="/">Home Page</Link>
-        <div>This is the Library page</div>
-        <section>
-            <div>
+        <div className="library-container">
         {props.journals.journals.map((j) => (
-          <article key={j.journal}>
+          <fieldset key={j.journal}>
              <div>{j.feeling}</div>
              <div>{j.goal}</div>
-          </article>
+             <div>{j.grateful}</div>
+             <div>{j.journalEntry}</div>
+          </fieldset>
         ))}
-      </div>
-    </section>
-        </>
+        </div>
 
     );
 };
