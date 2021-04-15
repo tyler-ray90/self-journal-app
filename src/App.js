@@ -9,7 +9,8 @@ import HomePage from '../src/pages/HomePage/HomePage';
 import FormPage from './pages/FormPage/FormPage';
 import ViewPage from './pages/View/ViewPage';
 import Library from './pages/Library/Library';
-// import { Form } from "react-bootstrap";
+
+import { auth } from '../src/services/Firebase';
 
 export default function App() {
 
@@ -79,12 +80,26 @@ function handleChange(e) {
 useEffect(() => {
   getAppData();
   getQuoteData();
+  
+  auth.onAuthStateChanged(user => {
+    if(user) {
+      setJournals(prevState => ({
+        ...prevState,
+        user,
+      }));
+    } else {
+      setJournals(prevState => ({
+        ...prevState,
+        user: null
+      }));
+    }
+  })
 }, []); 
 
 return (
   <div className="App">
     <header className="App-header">
-    <Header />
+    <Header user={journals.user}/>
     </header>
     <Switch>
     <Route exact path = "/" render={(props) => 

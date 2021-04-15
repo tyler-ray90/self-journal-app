@@ -9,16 +9,9 @@ function Library(props) {
         {props.journals.journals.map((j) => ( 
             <fieldset key={j.journal}>
                 <thead>
-                    <th>Date</th>
+                    <th>Journal Entry-</th>
                 </thead>
-             <Link to={`/view/${j._id}`}>{j.createdAt ? j.createdAt.substr(0,10):null}</Link>
-             <p>How were you feeling: {j.feeling}</p>
-             <br/>
-             <p>Achievments/Intentions: {j.goal}</p>
-             <br/>
-             <p>What were you grateful for: {j.grateful}</p>
-             <br/>
-             <p>What was on your mind: {j.journalEntry}</p>
+             <Link to={`/view/${j._id}`}>Date: {j.createdAt ? j.createdAt.substr(0,10):null}</Link>
             </fieldset>
         ))} 
         </table>

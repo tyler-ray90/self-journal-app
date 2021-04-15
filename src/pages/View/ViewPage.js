@@ -4,16 +4,21 @@ function ViewPage(props) {
     const result = props.journals.journals.filter(journal => journal._id === props.match.params.id)
     return (
         <div className="view-container">
-        <h1>This is the view page</h1>
+        
         {result.map((j) => (
-            <fieldset key={j.journal}>
-             <p>How were you feeling: {j.feeling}</p>
+            <fieldset className="fieldset" key={j.journal}>
+            <h2>Date: {j.createdAt ? j.createdAt.substr(0,10):null}</h2>
+             <p>How were you feeling:</p>
+             <p>{j.feeling}</p>
              <br/>
-             <p>Achievments/Intentions: {j.goal}</p>
+             <p>Achievments/Intentions:</p>
+             <p>{j.goal}</p>
              <br/>
-             <p>What were you grateful for: {j.grateful}</p>
+             <p>What were you grateful for:</p>
+             <p>{j.grateful}</p>
              <br/>
-             <p>What was on your mind: {j.journalEntry}</p>
+             <p>What was on your mind:</p>
+             <p>{j.journalEntry}</p>
             </fieldset>
         ))}
         </div>
