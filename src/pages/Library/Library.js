@@ -11,7 +11,7 @@ function Library(props) {
                 <thead>
                     <th>Date</th>
                 </thead>
-             <Link to="/view/?{j._id}">{j.createdAt ? j.createdAt.substr(0,10):null}</Link>
+             <Link to={`/view/${j._id}`}>{j.createdAt ? j.createdAt.substr(0,10):null}</Link>
              <p>How were you feeling: {j.feeling}</p>
              <br/>
              <p>Achievments/Intentions: {j.goal}</p>

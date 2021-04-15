@@ -110,13 +110,14 @@ return (
     setJournals={setJournals}
     />
   }/>
-  <Route exact path = "/view" render={(props) => 
+  <Route exact path = "/view/:id" render={(props) => 
   <ViewPage 
     handleChange={handleChange}
     addJournal={addJournal}
     getAppData={getQuoteData}
     journals={journals}
     setJournals={setJournals}
+    {...props}
   />
   }/>
   </Switch>
