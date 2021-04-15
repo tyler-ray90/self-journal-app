@@ -95,6 +95,16 @@ fieldset {
 
 }
 
+.view-container {
+  text-align: center;
+  background: url('./img/AdobeStock_342147612.jpeg');
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 button {
   display: inline-block;
   padding: 15px 25px;
