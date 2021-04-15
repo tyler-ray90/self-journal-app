@@ -40,6 +40,11 @@
   margin: 70px;
 }
 
+header > p img {
+  height: 2.5rem;
+  border-radius: 50%;
+}
+
 .form-container {
   text-align: center;
   font-size: 30px;

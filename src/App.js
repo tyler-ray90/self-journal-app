@@ -44,7 +44,9 @@ async function getQuoteData() {
 }
 
 async function addJournal(e) {
+  if(!journals.user) return;
   e.preventDefault();
+
   
   const BASE_URL = 'http://localhost:3001/api/journal';
   
@@ -80,7 +82,7 @@ function handleChange(e) {
 useEffect(() => {
   getAppData();
   getQuoteData();
-  
+
   auth.onAuthStateChanged(user => {
     if(user) {
       setJournals(prevState => ({
@@ -109,15 +111,16 @@ return (
     } />
     <Route exact path = "/form" render={(props) =>
     <FormPage 
-      handleChange={handleChange}
-      addJournal={addJournal}
-      getAppData={getQuoteData}
-      journals={journals}
-      setJournals={setJournals}
+    handleChange={handleChange}
+    addJournal={addJournal}
+    getAppData={getQuoteData}
+    journals={journals}
+    setJournals={setJournals}
     />
-    }/>
+  }/>
     <Route exact path = "/library" render={(props) => 
     <Library 
+    user={journals.user}
     handleChange={handleChange}
     addJournal={addJournal}
     getAppData={getQuoteData}

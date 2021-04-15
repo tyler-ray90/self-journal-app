@@ -5,6 +5,8 @@ function Library(props) {
     
     return ( 
         <div className="library-container">
+    {      
+        props.user &&
             <table>
         {props.journals.journals.map((j) => ( 
             <fieldset key={j.journal}>
@@ -15,6 +17,7 @@ function Library(props) {
             </fieldset>
         ))} 
         </table>
+    }
         </div>
 
     );
