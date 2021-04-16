@@ -5,18 +5,18 @@ import { login, logout } from '../../services/Firebase';
 function Header(props) {
     return (
     <>
-   <Link to="/" 
+   <Link className="links" to="/" 
    style={{textDecoration: 'none', color: 'white'}}>
-       <h1>Self-Journal</h1>
+       <h1 className="title">Self-Journal</h1>
     </Link> 
 
 
-    <Link to="/library" 
+    <Link className="links" to="/library" 
     style={{textDecoration: 'none', color: 'white'}}>
         Journal
     </Link>
 
-    <Link to="/form" 
+    <Link className="links" to="/form" 
     style={{textDecoration: 'none', color: 'white'}}>
         Add Entry
     </Link>
@@ -24,9 +24,9 @@ function Header(props) {
        {
    props.user ?
       <>
-          <p>Welcome, {props.user.displayName}</p>
-          <p><img src={props.user.photoURL} alt={props.user.displayName}/></p>
-          <div onClick={logout}>Logout</div>
+          <p id="welcome" className="links" >Welcome, {props.user.displayName}</p>
+          <p className="links" ><img src={props.user.photoURL} alt={props.user.displayName}/></p>
+          <div className="links" onClick={logout}>Logout</div>
      </>
       :
      <div onClick={login}>Login</div>

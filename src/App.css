@@ -25,25 +25,46 @@
   background-color: #282c34;
 }
 
+.title {
+  font-family: 'Noto Serif', serif;
+}
+
+.links {
+ font-family: sans-serif;
+ font-size: 20px;
+ font-weight: 200;
+}
+
 .quote {
   font-size: 30px;
   margin: 40px;
+  font-family: sans-serif;
+  font-weight: 200;
 }
 
 .name {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: 500; 
+  font-style: italic;
 }
 
 .signup {
-  font-size: 25px;
+  font-size: 30px;
   margin: 70px;
+  font-family: sans-serif;
 }
 
 header > p img {
   height: 2.5rem;
   border-radius: 50%;
 }
+h1 {
+  font-family: sans-serif;
+}
+
+/* span {
+  font-family: sans-serif;
+} */
 
 .form-container {
   text-align: center;
@@ -98,6 +119,7 @@ fieldset {
 
 .fieldset {
   font-size: 20px;
+  font-family: sans-serif;
   border: 2px solid black;
   border-radius: 5px;
   padding: 20px;

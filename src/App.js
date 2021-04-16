@@ -28,7 +28,7 @@ const [ journals, setJournals ] = useState({
 const [ apiState, setApiState ] = useState({});
 
 async function getAppData() {
-  const BASE_URL = 'http://localhost:3001/api/journal';
+  const BASE_URL = 'http://localhost:3005/api/journal';
   const journals = await fetch(BASE_URL).then(res => res.json());
     setJournals((prevState) => ({
       ...prevState,
@@ -48,7 +48,7 @@ async function addJournal(e) {
   e.preventDefault();
 
   
-  const BASE_URL = 'http://localhost:3001/api/journal';
+  const BASE_URL = 'http://localhost:3005/api/journal';
   
   const journal = await fetch(BASE_URL, {
     method: 'POST',
