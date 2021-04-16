@@ -35,10 +35,12 @@
 * Logs user out when submitting form
 * Formatting the returned date in US format
 * CSS styling with the view page
+* Adding pictures to README.md
  
 
 # Furture Enhancements 
 
+* Adding delete function
 * Fixing bugs
 * Adding a more in depth form
 * Overall polish
